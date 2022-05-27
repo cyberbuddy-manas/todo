@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>My Todo Scheduler</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+	<figure id="modal">
+		<div class="modal">
+			<section>
+				<h1>Subscribe to our Newsletter!!</h1>
+				<form>
+					<input type="email" id="modal_input" placeholder="Please enter your Email-ID">
+					<button type="submit">Subscribe</button>
+				</form>
+			</section>
+		</div>
+	</figure>
+
+	<nav>
+		<h1>TODOS</h1>
+	</nav>
+	<section id="hero">
+		<h1>When forget what to do.....<br>Open the TODOs</h1>
+		<img src="./hero.png">
+		<button class="btn">Get Started</button>
+	</section>
+	<section id="data">
+		<div>
+			<h1>Enter a Todo</h1>
+			<input id="head_todo" type="text" placeholder="Enter the Heading"><br>
+			<textarea id="desc_todo" placeholder="Enter the Description"></textarea><br>
+			<button onclick="get_id()" id="btn_todo">Submit</button>
+		</div>
+	</section>
+	<section id="todos"></section>
+	
+	<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-analytics.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase.js"></script>
+
+	<script>
+	  // Your web app's Firebase configuration
+	  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+	  var firebaseConfig = {
+	    apiKey: "AIzaSyA8m_5E_0bXMsYdWJtUk7u7d4_dEGJTlUg",
+	    authDomain: "todos-71918.firebaseapp.com",
+	    projectId: "todos-71918",
+	    storageBucket: "todos-71918.appspot.com",
+	    messagingSenderId: "10413724939",
+	    appId: "1:10413724939:web:dd3405bb3325d41323fe0e",
+	    measurementId: "G-5QB8EG2YBV"
+	  };
+	  // Initialize Firebase
+	  firebase.initializeApp(firebaseConfig);
+	  firebase.analytics();
+	</script>
+	<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
