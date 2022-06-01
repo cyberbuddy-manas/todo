@@ -162,7 +162,7 @@ nav h1 {
 	left: 0;
 }
 
-.modal section {
+.modal_outer section {
 	width: 550px;
 	height: 250px;
 	background-color: white;
@@ -171,19 +171,24 @@ nav h1 {
 	background-position: 0 -70px;
 	border-radius: 10px;
 	padding: 50px;
+
+	position: fixed;
+	z-index: 4;
+	left: 30%;
+	top: 30%;
 }
 
-.modal h1 {
+.modal_outer h1 {
 	text-align: center;
 	font-size: 38px;
 	font-family: sans-serif;
 }
 
-.modal form {
+.modal_outer form {
 	display: grid;
 }
 
-.modal input {
+.modal_outer input {
 	border: none;
 	border-bottom: 2px solid rgba(0, 0, 0, 0.5);
 	margin-top: 85px;
@@ -193,12 +198,12 @@ nav h1 {
 	/*text-align: center;*/
 }
 
-.modal input:focus {
+.modal_outer input:focus {
 	outline: none;
 	border-bottom: 2px solid black;
 }
 
-.modal button {
+.modal_outer button {
 	width: 200px;
 	padding: 15px 40px;
 	margin: auto;
@@ -209,7 +214,7 @@ nav h1 {
 	cursor: pointer;
 }
 
-.modal button:hover {
+.modal_outer button:hover {
 	background-color: rgba(0, 0, 0, 0.1);
 }
 

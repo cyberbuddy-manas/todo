@@ -79,7 +79,7 @@ function get_id() {
 	// createCompo();
 }
 
-createCompo();
+// createCompo();
 
 function modal_appear() {
 	document.querySelector("#modal").style.display = "unset";
@@ -89,13 +89,58 @@ document.querySelector(".modal").addEventListener("click", () => {
 	document.querySelector("#modal").style.display = "none";
 })
 
-setTimeout(modal_appear, 3000)
-
+// setTimeout(modal_appear, 1000)
 
 function delCompo(id) {
 	var db = firebase.database();
 
-	db.ref("compo/" + id).remove();
+	// db.ref("compo/" + id).remove();
 
+	localStorage.removeItem(id);
 	document.getElementById(id).style.display = "none";
 }
+
+function local_storage() {
+	const head = document.getElementById("head_todo").value;
+	const desc = document.getElementById("desc_todo").value;
+
+	localStorage.setItem("id", parseInt(localStorage.getItem("id")) + 1);
+
+	if (head == "" || desc == "") {
+		window.alert("Please enter some data for the Todo");
+	}
+	else {
+		var compo = {
+			head: head,
+			desc: desc
+		};
+
+		var count = localStorage.getItem("id");
+
+		localStorage.setItem("component" + count, JSON.stringify(compo));
+
+		var compo = JSON.parse(localStorage.getItem("components"));
+
+		var id = localStorage.getItem("id");
+		var compo = JSON.parse(localStorage.getItem("component" + id));
+		myTodo(compo.head, compo.desc, "component" + id);
+
+		head = "";
+		desc = "";
+	}
+}
+
+function displayCards() {
+	var id = localStorage.getItem("id");
+
+	for (var i = 1; i <= id; i++) {
+		var compo = JSON.parse(localStorage.getItem("component" + i));
+		if (compo == null) {
+			continue
+		}
+
+		myTodo(compo.head, compo.desc, "component" + i);
+	}
+}
+
+displayCards()
