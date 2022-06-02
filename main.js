@@ -1,5 +1,9 @@
 var db = firebase.database();
 
+if (localStorage.getItem("id") == undefined) {
+	localStorage.setItem("id", 0);
+}
+
 function myTodo(head, desc, id) {
 	let div = document.createElement("div");
 	div.className = "compo";
